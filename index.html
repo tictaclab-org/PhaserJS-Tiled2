@@ -32,8 +32,7 @@
           <h1>PhaserJS<br> Fiche 10</h1>
         </div>
       </div>
-      <p>Durant cette session, on va plus se concentrer sur la création de jeux vidéos dans le language JavaScript. Pour
-        ce faire, on se servira de la librarie <b>Phaser</b>.</p>
+      <p>Pour ce module, on se concentre sur la création de jeux vidéos dans le language JavaScript et la librarie <b>Phaser</b>.</p>
     </div>
   </div>
 
@@ -53,7 +52,7 @@
         </div>
         <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionexemple">
           <div class="card-body">
-            <p>Avant d'entamer ce défi, assure toi d'avoir déjà fait ceux ci:</p>
+            <p>Avant d'entamer ce défi, assure-toi d'avoir déjà fait ceux-ci:</p>
             <ul>
               <li><a href="https://tictaclab-org.github.io/PhaserJS-Introduction/">PhaserJS - Personnage</a></li>
               <li><a href="https://tictaclab-org.github.io/PhaserJS-Platforms/">PhaserJS - Plateformes</a></li>
@@ -65,8 +64,7 @@
               <li><a href="https://tictaclab-org.github.io/PhaserJS-Sons/">PhaserJS - Sons</a></li>
               <li><a href="https://tictaclab-org.github.io/PhaserJS-Tiled/">PhaserJS - Tiled</a></li>
             </ul>
-            <p>Ensuite, assure-toi de te munir d'une grande motivation et soif d'apprendre!</p>
-            <p>Aussi, assure-toi que tu sois bien connecté à ton compte <a href="https://repl.it">Repl.It</a>, et que tu
+            <p>Aussi, assure-toi que tu sois bien connecté.e à ton compte <a href="https://repl.it">Repl.It</a>, et que tu
               aies ton projet de la fois passée.</p>
           </div>
         </div>
@@ -84,37 +82,37 @@
         </div>
         <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionexemple">
           <div class="card-body">
-            <p>On va maitenant ajouter des piques et des pièces dans notre jeu. Notes que tu auras besoin des
+            <p>On va maitenant ajouter des piques et des pièces dans notre jeu. Note que tu auras besoin des
               connaissances des fiches précédentes, dans lesquelles tu as codé le fonctionnement des objets qu'on compte
-              ajotuer. Tiled va uniquement nous aider à générer les objets plus simplement, mais ne va pas affecter leur
+              ajouter. Tiled va uniquement nous aider à générer les objets plus simplement, mais ne va pas affecter leur
               utilité.</p>
 
-            <p>On retournes dans Tiled afin de créer d'autres calques. On ne va pas créer des calques de "tiles" cette
-              fois, mais un calque d'objets. Ceci s'appelle un "object layer". Tu peux nommer le calque "coin" pour des
+            <p>On retourne dans Tiled afin de créer d'autres calques. On ne va pas créer des calques de "tiles" (tuiles) cette
+              fois, mais un calque d'<b>objets</b>. Ceci s'appelle un "object layer". Tu peux nommer le calque "coin" pour des
               pièces (par example).</p>
 
             <img src="images/object_layer.png" alt="" width="25%">
 
-            <p>On doit maintenant ajouter des objets dans ce calque. Ceci a un fonctionnement différent des calques
-              d'avant, comme on ne peut pas ajouter de tiles dans ce calque. On doit ajouter des points, et plus tard
+            <p>On doit maintenant ajouter des objets dans ce calque. Le fonctionnement diffère par rapport aux calques
+              d'avant, vu qu'on ne peut pas ajouter de tuiles dans ce calque. On doit ajouter des points, et plus tard
               dans notre code on devra indiquer à quoi correspondent ces points.</p>
 
             <p>Appuie sur la touche "R" sur ton clavier pour ajouter des points dans ta map. Ceci ne fonctionne que si
-              tu as bien séléctionne le calque d'objets. Alternativement, tu peux choisir "Insert Rectangle" dans la
+              tu as bien séléctionné le calque d'objets. Alternativement, tu peux choisir "Insert Rectangle" dans la
               barre de séléction.</p>
 
             <img src="images/R.png" alt="" width="50%">
 
-            <p>Maintenant tu peux placer tes objets où tu les veux. Notes que tous les objets dans un même calque seront
+            <p>Maintenant tu peux placer tes objets où tu les veux. Note que tous les objets dans un même calque seront
               identiques.</p>
 
             <p>Les objets seront simplement des petits rectangles sur ta map. Cela ressemblera plus ou moins à l'image
-              suivante.</p>
+              suivante:</p>
 
             <img src="images/with_objs.png" alt="" width="50%">
 
             <p>On va maintenant importer ces pièces dans notre jeu Phaser. Exporte le document entier (File > Export
-              As), sous format json. Sur Phaser, efface l'ancien document json, et importe le nouveau. Tu dois également
+              As), sous format json. Sur Replit, efface l'ancien document json, et importe-le nouveau. Tu dois également
               importer l'image de ta pièce, seule. Normalement, lorsque tu as téléchargé le tileset entier dans la fiche
               passée, tu as également téléchargé chaque tile séparemment. Pas besoin de toutes les importer, la pièce
               suffira pour le moment.</p>
@@ -128,8 +126,8 @@
 
             <p>Ensuite, toujours dans <code>create</code>, après avoir chargé les plateformes, on va créer les pièces.
               On commence par créer un groupe d'objets statiques, comme d'habitude, grâce à la méthode
-              <code>this.physics.add.staticGroup()</code>. Ensuite, pour chaque objets dans notre calque "coins", on
-              crée une pièce. Cela se résume au code suivant.
+              <code>this.physics.add.staticGroup()</code>. Ensuite, pour chaque objet dans notre calque "coins", on
+              crée une pièce. Cela se résume au code suivant:
             </p>
 
             <pre><code class="language-js">
@@ -145,7 +143,7 @@
             <ul>
               <li><code>this.map.getObjectLayer('coins')['objects']</code> représente l'entièreté des objets dans le
                 calque "coins".</li>
-              <li><code>forEach</code> va appliquer une même function à tous les objets.</li>
+              <li><code>forEach</code> va appliquer une même fonction à tous les objets.</li>
               <li><code>let obj = this.coins.create(object.x, object.y, "img_coin");</code> va créer un objet dans le
                 groupe <code>this.coins</code>, qui s'appelle <code>obj</code>.</li>
               <li><code>obj.setOrigin(0);</code> va centrer l'objet créé afin que le centre de l'objet s'aligne avec
@@ -163,11 +161,11 @@
               }, null, this);
             </code></pre>
 
-            <p>Comme indiqué au début, le code d'interaction ne change pas, uniquement comment générer les pièces. Tu
+            <p>Comme indiqué au début, le code d'interaction ne change pas, uniquement la manière de générer les pièces. Tu
               peux donc copier-coller ce que tu avais déjà! Pratique non?</p>
 
             <p><b>À toi de jouer!</b> Suis les mêmes étapes afin d'ajouter des piques à ton jeu. Tu vas devoir créer un
-              autre calque d'objets, importer une autre image, et créer un nouveau groupe d'objets dans Phaser. Ensuite,
+              autre calque d'objets, importer une autre image, et créer un nouveau groupe d'objets dans ton code. Ensuite,
               tu peux recycler ton code d'avant.</p>
           </div>
         </div>
@@ -185,19 +183,17 @@
         </div>
         <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionexemple">
           <div class="card-body">
-            <p>Il est donc clair que Tiled nous aide à créer des maps bien plus simplement, et qu'on peut créer des maps
-              bien plus complexes sans trop d'effort. Avant de continuer on va explorer un outil très pratique qui va
-              nous
-              aider à générer nos maps plus simplement.</p>
+            <p>Tu as sans doute noté que Tiled nous aide à créer des maps bien plus simplement, et qu'on peut créer des maps
+              bien plus complexes sans trop d'effort. Avant de continuer, on va explorer un outil très pratique qui va
+              nous aider à générer nos maps plus simplement.</p>
 
-            <p>On peut facilement remplir un grand rectangle avec un même tile. Place-toi sur un calque de
-              tiles (Comme les plateformes ou l'arrière plan), et séléctionne un tile à placer. Appuies sur la touche
-              "P",
-              ou séléctionnes l'outil "Shape Fill Tool", et glisses simplement sur le rectangle à remplir.</p>
+            <p>On peut facilement remplir un grand rectangle avec une même tuile. Place-toi sur un calque de
+              tuiles (comme les plateformes ou l'arrière-plan), et séléctionne une tuile à placer. Appuies sur la touche
+              "P", ou sélectionne l'outil "Shape Fill Tool", et glisse simplement sur le rectangle à remplir.</p>
 
             <img src="images/P.png" alt="" width="50%">
 
-            <p>N'hésites pas à explorer d'autres fonctionnalités dans Tiled!</p>
+            <p>N'hésite pas à explorer d'autres fonctionnalités dans Tiled!</p>
             <!-- </div> -->
           </div>
         </div>
@@ -218,16 +214,9 @@
             <p>On va maintenant créer plusieurs niveaux au sein de notre jeu. Dans Phaser, cela s'appelle des "scènes".
             </p>
 
-            <p>Pour ce faire, on va devoir restructurer
-              notre code un peu. Tout d'abord, crée un document dans ton code sur ReplIt qui s'appelle "level1.js". Tu
-              l'auras deviné, ceci contiendra ton code pour le premier niveau.</p>
+            <p>Pour ce faire, on va devoir restructurer notre code un peu. Tout d'abord, crée un document dans ton code sur ReplIt qui s'appelle "level1.js". Tu l'auras deviné, ceci contiendra ton code pour le premier niveau.</p>
 
-            <p>Ce code sera plus ou moins identique à ce que nous avons pour l'instant, mais pas entièrement. Bouge les
-              fonctions <code>preload()</code>, <code>create()</code> et <code>update()</code> dans ce nouveau fichier,
-              et
-              copies la nouvelle entête au début du fichier. Note que les variables <code>config</code> et
-              <code>game</code> doivent rester dans ton fichier "script.js".
-            </p>
+            <p>Ce code sera plus ou moins identique à ce que nous avons pour l'instant, mais pas entièrement. Bouge les fonctions <code>preload()</code>, <code>create()</code> et <code>update()</code> dans ce nouveau fichier et copie la nouvelle en-tête au début du fichier. Note que les variables <code>config</code> et <code>game</code> doivent rester dans ton fichier "script.js".</p>
 
             <pre><code class="language-js">
               var Level1 = new Phaser.Class({
@@ -253,22 +242,14 @@
               }
             </code></pre>
 
-            <p>Notre premier niveau, qui pour l'instant représente le jeu entier, est donc dans un nouveau fichier. Il
-              est
-              important d'indiquer qu'on a créé ce nouveau fichier et de l'importer dans le jeu. Pour ce faire, rend-toi
-              sur le fichier "index.html", et rajoute une nouvelle balise <code>script</code>, comme indiqué dans le
-              code suivant.</p>
+            <p>Notre premier niveau, qui pour l'instant représente le jeu entier, est donc dans un nouveau fichier. Il est important d'indiquer qu'on a créé ce nouveau fichier et de l'importer dans le jeu. Pour ce faire, rends-toi sur le fichier "index.html", et rajoute une nouvelle balise <code>script</code>, comme indiqué dans le code suivant.</p>
 
             <img src="images/html.png" alt="" width="50%">
 
-            <p>C'est important que le "level1.js" soit importé <b>avant</b> le "script.js", comme on va se servir du
+            <p>C'est important que le "level1.js" soit importé <b>avant</b> le "script.js", vu qu'on va se servir du
               premier dans le second.</p>
 
-            <p>Afin de faire en sorte que le code fonctionne à nouveau, on doit simplement indiquer, dans "script.js",
-              que
-              le jeu commence avec le premier niveau. Tu peux effacer les fonctions <code>preload()</code>,
-              <code>create()</code> et <code>update()</code> du fichier, comme on les a déjà dans "level1.js". Ton
-              document "script.js" ne devrait que contenir les lignes suivantes:
+            <p>Afin de faire en sorte que le code fonctionne à nouveau, on doit simplement indiquer, dans "script.js", que le jeu commence avec le premier niveau. Tu peux effacer les fonctions <code>preload()</code>, <code>create()</code> et <code>update()</code> du fichier, comme on les a déjà dans "level1.js". Ton document "script.js" ne devrait que contenir les lignes suivantes:
             </p>
 
             <pre><code class="language-js">
@@ -281,34 +262,26 @@
                 },
                 scene: [Level1]
               };
-              
+
               const game = new Phaser.Game(config);
             </code></pre>
 
             <p>Note bien les changements par rapport à la variable <code>config</code> d'avant. Il n'y a plus de
-              fonctions
-              <code>preload()</code>,
-              <code>create()</code> et <code>update()</code>, mais il y a uniquement des noms de scènes. Pour l'instant
-              il
-              n'y a qu'une scène, mais tu peux imaginer où iront les autres scènes.
+              fonctions <code>preload()</code>, <code>create()</code> et <code>update()</code>, mais il y a uniquement des noms de scènes. Pour l'instant il n'y a qu'une scène, mais tu peux imaginer où iront les autres scènes.
             </p>
 
             <p><b>À toi de jouer!</b> Tu peux maintenant créer ton second niveau. Voici les étapes à suivre:
             <ul>
               <li>Tout d'abord, dans Tiled, crée un nouveau document. Tu dois à nouveau importer ton tileset (format
                 image), créer les calques de tiles "arrière plan" et "plateformes", les calques d'objets pour les
-                pièces,
-                les piques et l'objet de changement de niveau, et tu dois ajouter la propriété "solide". Une fois ton
+                pièces, les piques et l'objet de changement de niveau, et tu dois ajouter la propriété "solide". Une fois ton
                 second niveau prêt, tu peux l'exporter sous format json comme "level2.json".</li>
               <li>Ensuite tu dois créer un nouveau document "level2.js" dans ReplIt, et l'importer dans ton code dans le
-                document "index.html". N'oublies pas que cet import doit être avant l'import du fichier "script.js".
+                document "index.html". N'oublie pas que cet import doit être avant l'import du fichier "script.js".
               </li>
-              <li>Tu peux maintenant copier-coller le contenu de "level1.js", et changer le niveau en fonction. Il
-                faudra
-                surement adapter au moins les noms des fichiers (le "tileset.json"). Il faut aussi changer le nom de la
-                scène (toute première ligne), ainsi que la clé ("key") de la scène (ligne 5).</li>
+              <li>Tu peux maintenant copier-coller le contenu de "level1.js", et changer le niveau en fonction. Il faudra sûrement adapter au moins les noms des fichiers (le "tileset.json"). Il faut aussi changer le nom de la scène (toute première ligne), ainsi que la clé ("key") de la scène (ligne 5).</li>
               <li>Dans ton code principal ("script.js"), tu peux ajouter <code>Level2</code> à la liste de scènes, comme
-                suit
+                suit:
                 <pre><code class="language-js">
                 var config = {
                   type: Phaser.AUTO,
@@ -321,9 +294,8 @@
                 };
               </code></pre>
               </li>
-              <li>Finalement, tu dois ajouter une fonctionalité pour un passage du premier niveau au second.
-                Rappelle-toi
-                qu'on veut changer de niveau lorsqu'on touche un objet spécifique, dans le groupe
+              <li>Finalement, tu dois ajouter une fonctionnalité pour un passage du premier niveau au second.
+                Rappelle-toi qu'on veut changer de niveau lorsqu'on touche un objet spécifique, dans le groupe
                 <code>this.level_changer</code> (tu l'as peut-être nommé différemment). Ainsi, on veut remplir le code
                 suivant:
                 <pre><code class="language-js">
@@ -331,7 +303,7 @@
                   // ON VEUT REMPLIR CECI
                 }, null, this);
               </code></pre>
-                Heureusement il existe une manière très simple de changer de scènes. Il suffit d'utiliser la fonction
+                Heureusement, il existe une manière très simple de changer de scènes. Il suffit d'utiliser la fonction
                 <code>this.scene.switch('level2');</code>.
               </li>
             </ul>
@@ -346,7 +318,7 @@
           <h2 class="mb-0">
             <button class="btn btn-link done task" type="button" data-toggle="collapse" data-target="#collapse6"
               aria-expanded="false" aria-controls="collapse6">
-              Étape 5 - Top de copier-coller?
+              Étape 5 - Trop de copier-coller?
             </button>
           </h2>
         </div>
@@ -376,15 +348,16 @@
 
 
 
-  <div class=" footer">
+  <div class="footer">
     <div class="footer-links">
-      <a href="https://techieslab.be/"><i class="fas fa-globe"></i></i></a>
-      <a href="https://www.facebook.com/TechiesLabBrussels"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/company/techies-lab/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/TechiesLab"><i class="fab fa-twitter"></i></a>
+      <a href="https://tictaclab.org/"><i class="fas fa-globe"></i></i></a>
+      <a href="https://www.instagram.com/tictaclabbxl/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/TicTacLabBXL/"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/tictaclab/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://tictaclab-org.github.io/Fiches/"><i class="fa fa-list"></i> Fiches</a>
     </div>
     <div class="footer-copyright">
-      <a href="https://techieslab.be" rel="noopener noreferrer" target="_blank" class="alert-link copyright">
+      <a href="https://tictaclab.org" rel="noopener noreferrer" target="_blank" class="alert-link copyright">
         <i class="far fa-copyright"></i> 2023 Tic Tac Lab ASBL. All rights reserved.
       </a>
     </div>
